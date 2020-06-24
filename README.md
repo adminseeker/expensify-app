@@ -1,1 +1,5 @@
 # expensify-app
+
+A REACT BASED PROJECT
+
+UNDER DEVELOPMENT
