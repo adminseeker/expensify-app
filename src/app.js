@@ -12,7 +12,6 @@ const store = configureStore();
 
 store.dispatch(addExpense({description:"water bill"}));
 store.dispatch(addExpense({description:"gas bill"}));
-
 store.dispatch(setTextFilter("wat"));
 
 const state = store.getState();
