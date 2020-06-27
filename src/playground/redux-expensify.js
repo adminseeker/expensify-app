@@ -52,8 +52,8 @@ const editExpense = (id,updates)=>({
 })
 
 const filtersReducerDefaultState = {
-  text: '',
-  sortBy: 'date',
+  text: "",
+  sortBy: "date",
   startDate: undefined,
   endDate: undefined
 };
@@ -160,15 +160,15 @@ store.dispatch(setTextFilter("e"));
 
 const demoState = {
   expenses: [{
-    id: 'poijasdfhwer',
-    description: 'January Rent',
-    note: 'This was the final payment for that address',
+    id: "poijasdfhwer",
+    description: "January Rent",
+    note: "This was the final payment for that address",
     amount: 54500,
     createdAt: 0
   }],
   filters: {
-    text: 'rent',
-    sortBy: 'amount', 
+    text: "rent",
+    sortBy: "amount", 
     startDate: undefined,
     endDate: undefined
   }
