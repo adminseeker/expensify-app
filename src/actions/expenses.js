@@ -10,7 +10,7 @@ const startAddExpense = (expenseData={})=>{
   return(dispatch)=>{
     const {description="",note="",amount=0,createdAt=0}=expenseData;
     const expense = {description,note,amount,createdAt};
-    database.ref("expenses").push(expense).then((ref)=>{
+    return database.ref("expenses").push(expense).then((ref)=>{
       dispatch(addExpense({
         id:ref.key,
         ...expense
@@ -26,7 +26,7 @@ const removeExpense = ({id})=>({
 
 const startRemoveExpense = ({id})=>{
   return (dispatch)=>{
-    database.ref("expenses/"+id).remove().then(()=>{
+    return database.ref("expenses/"+id).remove().then(()=>{
       dispatch(removeExpense({id}));
     });
   }
@@ -37,6 +37,14 @@ const editExpense = (id,updates)=>({
   id,
   updates
 })
+
+const startEditExpense = (id,updates)=>{
+  return(dispatch)=>{    
+    return database.ref("expenses/"+id).update(updates).then(()=>{
+      dispatch(editExpense(id,updates));
+    });
+  }
+};
 
 const setExpenses = (expenses)=>({
   type:"SET_EXPENSES",
@@ -58,4 +66,4 @@ const startSetExpenses = ()=>{
   };
 };
 
-export {addExpense,removeExpense,editExpense,startAddExpense,startSetExpenses,startRemoveExpense};
+export {addExpense,removeExpense,editExpense,startAddExpense,startSetExpenses,startRemoveExpense,startEditExpense};
