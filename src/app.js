@@ -4,7 +4,7 @@ import AppRouter, {history} from "./routers/AppRouter";
 import configureStore from "./store/configureStore";
 import {startSetExpenses} from "./actions/expenses";
 import {login , logout} from "./actions/auth";
-import getVisibleExpenses from "./selectors/expenses"; 
+import getVisibleExpenses from "./selectors/expenses";
 import {Provider} from "react-redux";
 import "normalize.css/normalize.css"
 import "./styles/styles.scss";
